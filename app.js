@@ -103,7 +103,6 @@ app.use("/",userRoute);
 app.use("/listing",listingRoute);
 app.use("/listing/:id",reviewRoute);
 
-
 app.all("*",(req,res,next)=>{
     return next(new ExpressError(404,"Page not found!"));
 });

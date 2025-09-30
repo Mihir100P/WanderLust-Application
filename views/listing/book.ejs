@@ -1,0 +1,70 @@
+<%- layout("layouts/boilerplate") %>
+
+<div class="container my-5">
+  <div class="card shadow-lg p-4">
+    <h2 class="mb-4" style="color: #fe424d;">Book Your Villa</h2>
+
+    <!-- Villa Info -->
+    <div class="mb-4">
+      <h4><%= listing.title %></h4>
+      <p class="text-muted"><%= listing.location %></p>
+      <img src="<%= listing.image.url %>" alt="Villa Image" class="img-fluid rounded mb-3" style="max-height: 300px;">
+      <p><strong>Price:</strong> ₹<%= listing.price %> / night</p>
+    </div>
+
+    <!-- Booking Form -->
+    <form id="bookingForm" action="/listing/booking-confirm/<%= listing._id %>" method="POST">
+      <div class="mb-3">
+        <label for="checkIn" class="form-label">Check-in Date</label>
+        <input type="date" class="form-control" id="checkIn" name="checkIn" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="checkOut" class="form-label">Check-out Date</label>
+        <input type="date" class="form-control" id="checkOut" name="checkOut" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="guests" class="form-label">Number of Guests</label>
+        <input type="number" class="form-control" id="guests" name="guests" min="1" value="1" required>
+      </div>
+
+      <!-- Payment Options -->
+      <div class="mb-3">
+        <label class="form-label d-block mb-2">Payment Method</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="paymentMethod" id="upi" value="UPI" required>
+          <label class="form-check-label" for="upi">
+            UPI / Google Pay / PhonePe
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="paymentMethod" id="card" value="Card">
+          <label class="form-check-label" for="card">
+            Credit / Debit Card
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="paymentMethod" id="cod" value="COD">
+          <label class="form-check-label" for="cod">
+            Pay at Villa (Cash on Arrival)
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-dark w-100">Confirm Booking</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function (e) {
+    const checkIn = new Date(document.getElementById('checkIn').value);
+    const checkOut = new Date(document.getElementById('checkOut').value);
+
+    if (checkOut <= checkIn) {
+      e.preventDefault();
+      alert('Check-out date must be later than check-in date.');
+    }
+  });
+</script>

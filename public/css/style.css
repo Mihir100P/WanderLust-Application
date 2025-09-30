@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: linear-gradient(#e1f5f9,#5dd7ed,#e1f5f9);
   }
 /* nav bar */
 .fa-compass{
@@ -29,7 +30,7 @@ body {
 }
 .footer{
     bottom: 0;
-    background-color: #ebebeb;
+    background-color: white;
     height: 5rem;
     display: flex;
     flex-direction: column;
@@ -75,11 +76,12 @@ body {
 .card{
     margin-right:30px ;
     margin-bottom:45px ;
+    background: linear-gradient(#e1f5f9,#5dd7ed,#e1f5f9);
 }
 .card-img{
     height: 240px;
     width: 100%; 
-    border-radius: 25px;
+    border-radius: 16px;
     
 }
 .card-img-overlay{
@@ -90,6 +92,35 @@ body {
         background-color: white;
 }
 
+/* index-card */
+.index-card{
+    margin-right:30px ;
+    margin-bottom:45px ;
+    border-radius: 16px;
+    box-shadow: 6px 4px 12px rgba(0, 0, 0, 0.08);
+}
+.index-card:hover{
+    transform: scale(1.08);
+}
+.index-card-img{
+    height: 240px;
+    width: 100%; 
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    
+}
+
+.show-card{
+    border-radius: 16px;
+    background: rgb(197, 233, 245);
+}
+
+.show-card img{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
  /* new and edit */
  .add-btn , .edit-btn{
     background-color: #fe424d !important;
@@ -118,10 +149,12 @@ body {
         margin-left: 2rem; 
         text-align: center;
         opacity: 0.6;
+        transition: transform 0.2s ease-in-out;
     }
     .filter:hover{
         opacity: 1;
         cursor: pointer;
+        transform: scale(1.2);
     }
     .Tax-toggle{
         margin-left: 2rem;
@@ -133,6 +166,10 @@ body {
         border: 1px solid rgb(85, 79, 79) ;
         border-radius: 1rem;
         padding: 1rem 2rem 1rem 2rem;
+        transition: transform 0.2s ease-in-out;
+    }
+    .Tax-toggle:hover{
+        transform: scale(1.2);
     }
     .form-check-label{
         margin-right: 1rem;

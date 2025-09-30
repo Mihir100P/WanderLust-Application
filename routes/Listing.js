@@ -23,4 +23,8 @@ router.put("/:id",auth,isOwner,upload.single('list[image]'), wrapAsync(listingCo
 
 router.delete("/delete/:id",auth,isOwner,wrapAsync(listingController.delete));
 
+router.post("/booking/:id",auth,wrapAsync(listingController.booking));
+
+router.post("/booking-confirm/:id",auth,wrapAsync(listingController.booking_confirm));
+
 module.exports = router;

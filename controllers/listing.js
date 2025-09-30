@@ -93,3 +93,14 @@ module.exports.delete=async (req, res) => {
     req.flash("success","Listing deleted!");
     return res.redirect("/listing");
 }
+
+module.exports.booking=async(req,res)=>{
+    const { id } = req.params;
+    const listing = await Listing.findById(id);
+    return res.render("./listing/book.ejs",{listing});
+}
+
+module.exports.booking_confirm=async(req,res)=>{
+    req.flash("success","Your villa is booked,Thank you!");
+    return res.redirect("/listing");
+}

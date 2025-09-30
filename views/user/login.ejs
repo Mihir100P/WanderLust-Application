@@ -1,12 +1,12 @@
  <% layout("layouts/boilerplate.ejs") %>
  <body>
  <div class="row">
-        <div class="col-8 offset-3">
-            <h2 style="text-align: center; padding-top: 30px;">Login in Wanderlust</h2>
+        <div class="col-6 col-md-6 offset-3">
+            <h2 style="text-align: center; padding-top: 30px; color: #fe424d;">Login in Wanderlust</h2>
              <form method="post" action="/login"  novalidate class="needs-validation">
               <div>
-        <label class="form-label" for="Username">Username-</label>
-        <input type="text" id="Username" name="username" placeholder="Enter Username" class="form-control " required> 
+        <label class="form-label m-2" for="Username">Username-</label>
+        <input type="text" id="Username" name="username" placeholder="Enter Username" class="form-control m-2" required> 
         <div class="valid-feedback">
       Looks good!
     </div>
@@ -15,8 +15,8 @@
     </div>
     </div>
     <div>
-        <label class="form-label" for="pass">Password-</label>
-        <input type="password" id="pass" name="password" placeholder="Enter password" class="form-control " required> 
+        <label class="form-label m-2" for="pass">Password-</label>
+        <input type="password" id="pass" name="password" placeholder="Enter password" class="form-control m-2" required> 
         <div class="valid-feedback">
       Looks good!
     </div>
@@ -24,7 +24,10 @@
       Please write a Password
     </div>
     </div>
-    <button class="btn btn-success mt-3" >Login</button>
+    <div class="text-center">
+      <button class="btn btn-success mt-3" >Login</button>
+    </div>
+    
     </form>
            </div>
            </div>

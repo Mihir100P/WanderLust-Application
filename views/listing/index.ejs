@@ -54,14 +54,14 @@
     </div>
     <div class="row mt-3 ind">
         <% listings.forEach(data => { %>
-            <a href="/listing/show/<%= data.id %>" class="card" style="width: 18rem; border: none; padding: 0; text-decoration: none; color: inherit;">
-                <img src="<%= data.image.url %>" class="card-img" alt="...">
+            <a href="/listing/show/<%= data.id %>" class="card index-card" style="width: 18rem; border: none; padding: 0; text-decoration: none; color: inherit;">
+                <img src="<%= data.image.url %>" class="card-img index-card-img" alt="...">
                 <div class="card-img-overlay"><%= data.country %></div>
                 <div class="card-body">
-                    <p class="card-text"><%= data.title %></p>
-                    <p class="card-text">
-                        &#8377; <%= data.price != null ? data.price.toLocaleString("en-IN") : "0" %>
-                        <i class="tax-info">&nbsp; &nbsp; &nbsp; &nbsp; GST +18%</i>
+                    <p class="card-text index-card-text py-3 px-2"><%= data.title %></p>
+                    <p class="card-text index-card-text py-3 px-2">
+                        &nbsp; &#8377; <%= data.price != null ? data.price.toLocaleString("en-IN") : "0" %>
+                        <i class="tax-info index-card-text">&nbsp; &nbsp; &nbsp; &nbsp; GST +18%</i>
                     </p>
                 </div>
             </a>

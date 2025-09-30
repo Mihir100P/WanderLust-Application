@@ -1,8 +1,10 @@
 <% layout("layouts/boilerplate.ejs") %>
 <body>
+  <div class="container my-5">
+  <div class="card shadow-lg p-4">
     <div class="row">
     <div class="col-8 offset-2">
-    <h1 style="margin-top: 2rem;">Edit the content</h1>
+    <h1 style="margin-top: 2rem; color: #fe424d;">Edit the content</h1>
     <form method="post" action="/listing/<%=data.id%>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data" >
         <div class="mb-3">
         <label class="form-label" for="title">Title</label>
@@ -26,7 +28,7 @@
         </div>
         <div class="mb-3">
           Image Preview <br>
-          <img src="<%=originalImg%>">;
+          <img src="<%=originalImg%>" width="300px" height="300px">
         </div>
         <div class="mb-3">
             <label for="img" class="form-label">Upload new image</label>
@@ -78,9 +80,11 @@
           </div>
          </div>
          <br>
-            <button class="btn btn-dark edit-btn" >Edit</button>
+            <button class="btn btn-dark edit-btn px-5" >Edit</button>
          <br> <br>
     </form>
+</div>
+</div>
 </div>
 </div>
 </body>

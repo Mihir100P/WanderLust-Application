@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(#e1f5f9,#5dd7ed,#e1f5f9);
+    background: linear-gradient(#e1f5f9,#d7e8eb,#e1f5f9);
   }
 /* nav bar */
 .fa-compass{
